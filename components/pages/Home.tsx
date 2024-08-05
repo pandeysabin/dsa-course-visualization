@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import "./App.css"; // Ensure this file is updated
+import "../App.css"; // Ensure this file is updated
 
 export const Home = () => {
   const chapters = [
@@ -250,6 +250,8 @@ export const Home = () => {
     };
   }, [currentChapter, currentLesson]);
 
+  console.log(window.navigator);
+
   return (
     <div className="course-container">
       <div className="navigation-buttons">
@@ -262,7 +264,7 @@ export const Home = () => {
         <button onClick={goRight} className="nav-button">
           ➡️
         </button>
-        <button onClick={goDown} className="nav-button">
+        <button onClick={() => goDown()} className="nav-button">
           ⬇️
         </button>
       </div>
