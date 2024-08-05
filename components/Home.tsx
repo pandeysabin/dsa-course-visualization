@@ -1,10 +1,13 @@
+"use client";
+
 import React, { useState, useEffect, useRef } from "react";
 import "./App.css"; // Ensure this file is updated
 
-const App = () => {
+export const Home = () => {
   const chapters = [
     {
       id: "chapter-1",
+      name: "Introduction",
       lessons: [
         "Introduction to DSA",
         "Why Learn DSA?",
@@ -188,6 +191,7 @@ const App = () => {
 
   const goRight = () => {
     const lessons = chapters[currentChapter].lessons;
+
     if (currentLesson < lessons.length - 1) {
       const nextLesson = currentLesson + 1;
       setCurrentLesson(nextLesson);
@@ -322,5 +326,3 @@ const App = () => {
     </div>
   );
 };
-
-export default App;
